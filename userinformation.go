@@ -14,6 +14,18 @@ type UserInformation struct {
 	VerificationData   []byte
 }
 
-func (s *UserInformation) MarshalBinary() ([]byte, error) {
+func (u *UserInformation) MarshalBinary() ([]byte, error) {
 	return nil, errors.New("Fail")
+}
+
+func (u *UserInformation) UnmarshalBinary(data []byte) error {
+	return nil
+}
+
+func (u *UserInformation) Length() uint16 {
+	return 125
+}
+
+func (u *UserInformation) Type() uint16 {
+	return UserInformationType
 }
